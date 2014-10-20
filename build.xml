@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- 
+  This project uses the ant-processenabler to build, deploy, assemble, ...
+  The ant-processenabler can be found under:
+  - https://github.com/pmeisen/ant-processenabler
+  - git://github.com/pmeisen/ant-processenabler.git
+  The fully packed 'application' is available here;
+  - http://ant-processenabler.meisen.net/downloads/ant-processenabler-TRUNK-SNAPSHOT.zip
+  -->
+<project name="dis-timeintervaldataanalyzer">	
+  <import file="${ant.home}\resources\ant\library_main.xml"/>
+  
+  <macrodef name="resourceMapper">
+    <attribute name="resourceFolder" />
+    <attribute name="resourceFileName" />
+    <attribute name="resource" />
+    <attribute name="resourceType" />
+    
+    <sequential>
+      <if>
+      
+        <!-- unzip the UI -->
+        <and>
+          <equals arg1="@{resourceType}" arg2="${build.resource.dependency}" />
+          <matches pattern="\.zip$" string="@{resourceFileName}" /> 
+        </and>
+        <then>
+          <var name="resMapper.location" value="${project.settings.http.docroot}" />
+          <var name="resMapper.unzip" value="true" />
+        </then>
+        
+        <!-- copy the jdbc-driver -->
+        <elseif>
+          <and>
+            <equals arg1="@{resourceType}" arg2="${build.resource.dependency}" />
+            <matches pattern="dis\-timeintervaldataanalyzer\-jdbc" string="@{resourceFileName}" /> 
+          </and>
+          <then>
+            <mkdir dir="${resMapper.rootFolder}/jdbc-driver" />
+            <copy file="@{resource}" todir="${resMapper.rootFolder}/jdbc-driver" />
+          </then>
+        </elseif>
+        
+        <!-- activate replacements within resources -->
+        <elseif>
+          <equals arg1="@{resourceType}" arg2="${build.resource.resource}" />
+          <then>
+            <var name="resMapper.replaceProperties" value="true" />
+            
+            <!-- move the stop.bat to the root, also use that trigger to copy the LICENSE -->
+            <if>
+              <equals arg1="@{resourceFileName}" arg2="stop.bat" />
+              <then>
+                <var name="resMapper.location" value="" />
+                <copy file="LICENSE" todir="${resMapper.rootFolder}" />
+              </then>
+            </if>
+          </then>
+        </elseif>
+      </if>
+    </sequential>
+  </macrodef>
+</project>

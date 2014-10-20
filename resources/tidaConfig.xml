@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config xmlns="http://dev.meisen.net/xsd/dissertation/config"
+        xmlns:idfile="http://dev.meisen.net/xsd/dissertation/caches/identifier/file"
+        xmlns:mdfile="http://dev.meisen.net/xsd/dissertation/caches/metadata/file"
+        xmlns:bmpfile="http://dev.meisen.net/xsd/dissertation/caches/bitmap/file"
+        xmlns:factfile="http://dev.meisen.net/xsd/dissertation/caches/facts/file"
+        
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        
+        xsi:schemaLocation="http://dev.meisen.net/xsd/dissertation/config http://dev.meisen.net/xsd/dissertation/tidaConfig.xsd
+                            http://dev.meisen.net/xsd/dissertation/caches/identifier/file http://dev.meisen.net/xsd/dissertation/tidaFileIdentifierCache.xsd
+                            http://dev.meisen.net/xsd/dissertation/caches/metadata/file http://dev.meisen.net/xsd/dissertation/tidaFileMetaDataCache.xsd
+                            http://dev.meisen.net/xsd/dissertation/caches/bitmap/file http://dev.meisen.net/xsd/dissertation/tidaFileBitmapCache.xsd
+                            http://dev.meisen.net/xsd/dissertation/caches/facts/file http://dev.meisen.net/xsd/dissertation/tidaFileFactDescriptorModelSetCache.xsd">
+
+  <location folder="server" />
+
+  <caches>
+    <identifier implementation="net.meisen.dissertation.impl.cache.FileIdentifierCache">
+      <idfile:config folder="data-identifiers" />
+    </identifier>
+  
+    <metadata implementation="net.meisen.dissertation.impl.cache.FileMetaDataCache">
+      <mdfile:config folder="data-metadata" />
+    </metadata>
+  
+    <bitmap implementation="net.meisen.dissertation.impl.cache.FileBitmapCache">
+      <bmpfile:config folder="data-bitmaps" />
+    </bitmap>
+    
+    <factsets implementation="net.meisen.dissertation.impl.cache.FileFactDescriptorModelSetCache">
+      <factfile:config folder="data-facts" />
+    </factsets>
+    
+    <records implementation="net.meisen.dissertation.impl.cache.MapDbDataRecordCache" />
+  </caches>
+  
+  <server>
+    <http port="${project.settings.http.port}" docroot="${project.settings.http.docroot}" timeout="30" enable="${project.settings.http.enable}" />
+    <tsql port="${project.settings.tsql.port}" timeout="1800000" enable="${project.settings.tsql.enable}" />
+    <control port="${project.settings.control.port}" enable="${project.settings.control.enable}" />
+  </server>
+</config>
