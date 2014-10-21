@@ -18,19 +18,19 @@
 
   <caches>
     <identifier implementation="net.meisen.dissertation.impl.cache.FileIdentifierCache">
-      <idfile:config folder="data-identifiers" />
+      <idfile:config folder="server/data-identifiers" />
     </identifier>
   
     <metadata implementation="net.meisen.dissertation.impl.cache.FileMetaDataCache">
-      <mdfile:config folder="data-metadata" />
+      <mdfile:config folder="server/data-metadata" />
     </metadata>
   
     <bitmap implementation="net.meisen.dissertation.impl.cache.FileBitmapCache">
-      <bmpfile:config folder="data-bitmaps" />
+      <bmpfile:config folder="server/data-bitmaps" />
     </bitmap>
     
     <factsets implementation="net.meisen.dissertation.impl.cache.FileFactDescriptorModelSetCache">
-      <factfile:config folder="data-facts" />
+      <factfile:config folder="server/data-facts" />
     </factsets>
     
     <records implementation="net.meisen.dissertation.impl.cache.MapDbDataRecordCache" />
