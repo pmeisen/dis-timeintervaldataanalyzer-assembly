@@ -22,7 +22,7 @@
     <!-- front-end (UI) -->
     <dependency>
       <groupId>net.meisen.dissertation</groupId>
-      <artifactId>net-meisen-dissertation-dis-timeintervaldataanalyzerui</artifactId>
+      <artifactId>net-meisen-dissertation-dis-timeintervaldataanalyzer-ui</artifactId>
       <version>TRUNK-SNAPSHOT</version>
       <type>zip</type>
     </dependency>
