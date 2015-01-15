@@ -33,7 +33,7 @@
       <factfile:config folder="server/data-facts" />
     </factsets>
     
-    <records implementation="net.meisen.dissertation.impl.cache.MapDbDataRecordCache" />
+    <records implementation="net.meisen.dissertation.impl.cache.IdsOnlyDataRecordCache" />
   </caches>
   
   <server>
