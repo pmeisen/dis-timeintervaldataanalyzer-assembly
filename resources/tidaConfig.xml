@@ -16,6 +16,10 @@
 
   <location folder="server" />
 
+  <!--
+    It is recommended to use the available hibernate-caches, i.e.:
+      - https://github.com/pmeisen/dis-timeintervaldataanalyzer-hibernate
+    -->
   <caches>
     <identifier implementation="net.meisen.dissertation.impl.cache.FileIdentifierCache">
       <idfile:config folder="server/data-identifiers" />
