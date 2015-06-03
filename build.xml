@@ -28,6 +28,7 @@
         <then>
           <var name="resMapper.location" value="${project.settings.http.docroot}" />
           <var name="resMapper.unzip" value="true" />
+          <var name="resMapper.excludeFiles" value="**/*/META-INF/**/*" />
         </then>
         
         <!-- copy the jdbc-driver -->

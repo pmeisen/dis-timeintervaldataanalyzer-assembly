@@ -22,7 +22,7 @@
     <!-- front-end (UI) -->
     <dependency>
       <groupId>net.meisen.dissertation.assemblies</groupId>
-      <artifactId>net-meisen-dissertation-dis-timeintervaldataanalyzer-ui</artifactId>
+      <artifactId>net-meisen-dissertation-dis-timeintervaldataanalyzer-ui2</artifactId>
       <version>TRUNK-SNAPSHOT</version>
       <type>zip</type>
     </dependency>
@@ -33,6 +33,12 @@
       <artifactId>net-meisen-dissertation-dis-timeintervaldataanalyzer-jdbc</artifactId>
       <version>TRUNK-SNAPSHOT</version>
     </dependency>
-
+    
+    <!-- add the hibernate cache -->
+    <dependency>
+      <groupId>net.meisen.dissertation</groupId>
+      <artifactId>net-meisen-dissertation-dis-timeintervaldataanalyzer-hibernate</artifactId>
+      <version>TRUNK-SNAPSHOT</version>
+    </dependency>
   </dependencies>
 </project>

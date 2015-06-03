@@ -28,6 +28,18 @@
        <param name="ConversionPattern" value="%d{ABSOLUTE} %-5p [%c{1}] %m%n"/>
     </layout>
   </appender>
+  
+  <appender name="FILE" class="org.apache.log4j.DailyRollingFileAppender">
+    <param name="file" value="logs/tidais.log" />
+    <param name="threshold" value="DEBUG" />
+    <param name="append" value="true" />
+    <param name="ImmediateFlush" value="true" />
+    <param name="DatePattern" value="yyyy-MM-dd" />
+
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="conversionPattern" value="%m%n"/>
+    </layout>
+  </appender>
 
   <!-- ================ -->
   <!-- Limit loggers    -->
@@ -36,14 +48,8 @@
     <level value="WARN"/>
   </logger>
   <logger name="net.meisen.dissertation">
-    <level value="TRACE"/>
+    <level value="INFO"/>
   </logger>
-  <!--
-  <logger name="net.meisen.general.sbconfigurator.config.DefaultConfiguration">
-    <level value="TRACE"/>
-  </logger>
-  -->
-
 
    <!-- ======================= --> 
    <!-- Setup the Root category -->
@@ -51,5 +57,6 @@
    <root>
       <level value="WARN" />
       <appender-ref ref="CONSOLE"/>
+      <appender-ref ref="FILE"/>
    </root>
 </log4j:configuration>
