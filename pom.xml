@@ -35,10 +35,12 @@
     </dependency>
     
     <!-- add the hibernate cache -->
+    <!--
     <dependency>
       <groupId>net.meisen.dissertation</groupId>
       <artifactId>net-meisen-dissertation-dis-timeintervaldataanalyzer-hibernate</artifactId>
       <version>TRUNK-SNAPSHOT</version>
     </dependency>
+    -->
   </dependencies>
 </project>
