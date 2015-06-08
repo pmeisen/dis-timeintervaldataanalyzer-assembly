@@ -55,9 +55,6 @@ if exist "%curDir%jre\bin\%JAVA_EXEC%.exe" (
 REM ***************
 REM ** Run...    **
 REM ***************
-REM ***************
-REM ** Run...    **
-REM ***************
 if ""%JAVA_EXEC%""==""java"" (
   cd "%curDir%"
   "%JAVA_DIR%" -XX:MaxPermSize=32M -Xmx128M -cp "%curDir%lib/*" net.meisen.general.server.control.ServerController localhost ${project.settings.control.port} SHUTDOWN
