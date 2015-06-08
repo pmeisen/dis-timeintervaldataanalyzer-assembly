@@ -40,6 +40,9 @@
           <then>
             <mkdir dir="${resMapper.rootFolder}/jdbc-driver" />
             <copy file="@{resource}" todir="${resMapper.rootFolder}/jdbc-driver" />
+            
+            <!-- use it as trigger to copy the LICENSE as well -->
+            <copy file="LICENSE" todir="${resMapper.rootFolder}" />
           </then>
         </elseif>
         
@@ -49,12 +52,15 @@
           <then>
             <var name="resMapper.replaceProperties" value="true" />
             
-            <!-- move the stop.bat to the root, also use that trigger to copy the LICENSE -->
+            <!-- move the stop files to the root -->
             <if>
-              <equals arg1="@{resourceFileName}" arg2="stop.bat" />
+              <or>
+                <equals arg1="@{resourceFileName}" arg2="stop.bat" />
+                <equals arg1="@{resourceFileName}" arg2="stop" />
+                <equals arg1="@{resourceFileName}" arg2="stop.sh" />
+              </or>
               <then>
                 <var name="resMapper.location" value="" />
-                <copy file="LICENSE" todir="${resMapper.rootFolder}" />
               </then>
             </if>
           </then>
