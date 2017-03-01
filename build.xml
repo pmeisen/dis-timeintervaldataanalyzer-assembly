@@ -1,71 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
-<!-- 
-  This project uses the ant-processenabler to build, deploy, assemble, ...
-  The ant-processenabler can be found under:
-  - https://github.com/pmeisen/ant-processenabler
-  - git://github.com/pmeisen/ant-processenabler.git
-  The fully packed 'application' is available here;
-  - http://ant-processenabler.meisen.net/downloads/ant-processenabler-TRUNK-SNAPSHOT.zip
-  -->
-<project name="dis-timeintervaldataanalyzer">	
-  <import file="${ant.home}\resources\ant\library_main.xml"/>
-  
-  <macrodef name="resourceMapper">
-    <attribute name="resourceFolder" />
-    <attribute name="resourceFileName" />
-    <attribute name="resource" />
-    <attribute name="resourceType" />
-    
-    <sequential>
-      <if>
-      
-        <!-- unzip the UI -->
-        <and>
-          <equals arg1="@{resourceType}" arg2="${build.resource.dependency}" />
-          <matches pattern="\.zip$" string="@{resourceFileName}" /> 
-        </and>
-        <then>
-          <var name="resMapper.location" value="${project.settings.http.docroot}" />
-          <var name="resMapper.unzip" value="true" />
-          <var name="resMapper.excludeFiles" value="**/*/META-INF/**/*" />
-        </then>
-        
-        <!-- copy the jdbc-driver -->
-        <elseif>
-          <and>
-            <equals arg1="@{resourceType}" arg2="${build.resource.dependency}" />
-            <matches pattern="dis\-timeintervaldataanalyzer\-jdbc" string="@{resourceFileName}" /> 
-          </and>
-          <then>
-            <mkdir dir="${resMapper.rootFolder}/jdbc-driver" />
-            <copy file="@{resource}" todir="${resMapper.rootFolder}/jdbc-driver" />
-            
-            <!-- use it as trigger to copy the LICENSE as well -->
-            <copy file="LICENSE" todir="${resMapper.rootFolder}" />
-          </then>
-        </elseif>
-        
-        <!-- activate replacements within resources -->
-        <elseif>
-          <equals arg1="@{resourceType}" arg2="${build.resource.resource}" />
-          <then>
-            <var name="resMapper.replaceProperties" value="true" />
-            
-            <!-- move the stop files to the root -->
-            <if>
-              <or>
-                <equals arg1="@{resourceFileName}" arg2="stop.bat" />
-                <equals arg1="@{resourceFileName}" arg2="stop" />
-                <equals arg1="@{resourceFileName}" arg2="stop.sh" />
-              </or>
-              <then>
-                <var name="resMapper.location" value="" />
-              </then>
-            </if>
-          </then>
-        </elseif>
-      </if>
-    </sequential>
-  </macrodef>
+<project name="dis-timeintervaldataanalyzer-assembly">
+    <include file="../tida-workspace/common-libs/ant-util/util-ant.xml"/>
+
+    <target name="05-assemble">
+        <resolve-dependencies lib="dist/lib" testLib="dist/lib"/>
+        <exec-npm module="install"/>
+
+        <zip destfile="dist/tida-server.zip" level="9">
+            <zipfileset dir="additional" excludes="bin/**/*" prefix=""/>
+            <zipfileset dir="additional/bin" prefix="bin" filemode="755"/>
+            <zipfileset dir="resources" prefix="resources"/>
+            <zipfileset dir="dist/lib" prefix="lib"/>
+            <zipfileset src="node_modules/dis-tida-ui2/dist/dis-tida-ui2.zip" prefix="www-root"/>
+        </zip>
+
+        <delete dir="dist/lib" failonerror="false"/>
+    </target>
 </project>

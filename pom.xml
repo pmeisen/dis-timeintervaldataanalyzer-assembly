@@ -18,15 +18,7 @@
       <artifactId>net-meisen-dissertation-dis-timeintervaldataanalyzer</artifactId>
       <version>TRUNK-SNAPSHOT</version>
     </dependency>
-  
-    <!-- front-end (UI) -->
-    <dependency>
-      <groupId>net.meisen.dissertation.assemblies</groupId>
-      <artifactId>net-meisen-dissertation-dis-timeintervaldataanalyzer-ui2</artifactId>
-      <version>TRUNK-SNAPSHOT</version>
-      <type>zip</type>
-    </dependency>
-    
+
     <!-- JDBC driver -->
     <dependency>
       <groupId>net.meisen.dissertation</groupId>

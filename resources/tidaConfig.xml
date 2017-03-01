@@ -41,8 +41,8 @@
   </caches>
   
   <server>
-    <http port="${project.settings.http.port}" docroot="${project.settings.http.docroot}" timeout="30" enable="${project.settings.http.enable}" />
-    <tsql port="${project.settings.tsql.port}" timeout="1800000" enable="${project.settings.tsql.enable}" />
-    <control port="${project.settings.control.port}" enable="${project.settings.control.enable}" />
+    <http port="20666" docroot="www-root" timeout="30" enable="true" />
+    <tsql port="21666" timeout="1800000" enable="true" />
+    <control port="22666" enable="true" />
   </server>
 </config>
