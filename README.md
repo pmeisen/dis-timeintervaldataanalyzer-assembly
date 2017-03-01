@@ -25,7 +25,7 @@ with new features, which break the old code. Thus, the currently used version ar
 
 ### Cloning the needed Repositories
 
-The pre-defined **TIDA work-space** includes several repositories. To utilize the pre-configured work-space it is
+The pre-defined **TIDA workspace** includes several repositories. To utilize the pre-configured workspace it is
 necessary to clone (see [How to Clone](https://help.github.com/articles/cloning-a-repository/)) the following GitHub repositories into the following folder-structure:
 
 - [dis-timeintervaldataanalyzer](https://github.com/pmeisen/dis-timeintervaldataanalyzer.git)
@@ -59,3 +59,7 @@ After cloning the different projects, the folder structure should be as follows:
 <p align="center">
   <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/folder-structure.png" alt="Folder Structure" width="230">
 </p>
+
+### Setting up the Workspace
+
+As mentioned earlier, IntelliJ IDEA is the recommended IDE for the development of the TIDA Platform.
