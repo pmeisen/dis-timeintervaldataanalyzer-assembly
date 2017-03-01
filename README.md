@@ -53,3 +53,9 @@ within the workspace:
 Last but not least, the workspace itself:
 
 - [tida-workspace](https://github.com/pmeisen/tida-workspace.git)
+
+After cloning the different projects, the folder structure should be as follows:
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/folder-structure.png" alt="Folder Structure" width="230">
+</p>
