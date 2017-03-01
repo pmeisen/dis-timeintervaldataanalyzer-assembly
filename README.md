@@ -20,8 +20,18 @@ If you want to develop or modify the TIDA system, the following requirements sho
   - a fully configured workspace is available [here](https://github.com/pmeisen/tida-workspace)
 - git and/or GitHub Desktop to clone the needed repositories
   
-**Note:** In general, higher version should be usable. Nevertheless, the past has shown that newer version may come
-with new features, which break the old code. Thus, the currently used version are recommended when developing.
+**Notes:** 
+
+- In general, higher version should be usable. Nevertheless, the past has shown that newer version may come
+with new features, which break the old code. Thus, the *currently used* versions are recommended when developing.
+- If you don't know how to install the nodeJs have a look at the [nodeJs Homepage](https://nodejs.org/). You can find the
+download and instructions there.
+- If you don't know how to install `bower` or `grunt-cli` as global modules, please have look here [npm-install](https://docs.npmjs.com/cli/install) 
+or just execute `npm install -g bower` and `npm install -g grunt-cli` in your console/terminal.
+- You should make sure that the commands `npm`, `grunt`, and `bower` are executable from the terminal (i.e., are in your `PATH` 
+or bind), normally this is done automatically (using `UNIX` or `Mac`), nevertheless on Windows systems this
+is sometimes more difficult than needed (e.g., see [bower command not found windows](http://stackoverflow.com/questions/21732447/bower-command-not-found-windows)).
+
 
 ### Cloning the needed Repositories
 
