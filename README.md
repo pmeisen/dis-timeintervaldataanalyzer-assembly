@@ -72,4 +72,47 @@ After cloning the different projects, the folder structure should be as follows:
 
 ### Setting up the Workspace
 
-As mentioned earlier, IntelliJ IDEA is the recommended IDE for the development of the TIDA Platform.
+As mentioned earlier, IntelliJ IDEA is the recommended IDE for the development of the TIDA Platform. To start developing you just have to open
+the `tida-workspace` project. To do so, click on `open` in the IntelliJ start screen (or the `File` menu) and select the `tida-wrokspace` folder (!).
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/intellij-open.png" alt="Folder Structure" width="230">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/intellij-project-selection.png" alt="Folder Structure" width="230">
+</p>
+
+The IntelliJ IDE should open having all the modules of the project already selected. It may be necessary to open up the project view (on the left side). You may also want
+to have the `Ant Build` view opened, so that you can easily `build` or `deploy` the different modules. The `Ant` scripts are only available for the `Java` modules of the 
+projects, e.g., `dis-timeintervaldataanalyzer`, `dis-timeintervaldataanalyzer-jdbc`, or `gen-dummy`. The `JavaScript` or web-oriented modules are utilizing [Grunt](https://gruntjs.com/)
+as build tool. It is recommended to install the `nodeJs` plug-in available for the IntelliJ IDE, so that these modules can also easily be handled via the UI. In addition, 
+IntelliJ provides a `Grunt Tool Window` similar to the `Ant` one. Further information can be found here:
+- [Using Grunt Task Runner](https://www.jetbrains.com/help/idea/2016.3/using-grunt-task-runner.html)
+- [Grunt Tool Window](https://www.jetbrains.com/help/idea/2016.3/grunt-tool-window.html)
+- [Installing, Updating and Uninstalling Repository Plugins](https://www.jetbrains.com/help/idea/2016.3/installing-updating-and-uninstalling-repository-plugins.html)
+
+After setting everything up, the UI should be similar to something like that (or however you prefer it):
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/intellij-ui-ant.png" alt="UI with Ant Tool Window" width="230">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/intellij-ui-plugin-grunt.png" alt="UI with Grunt Tool Window and nodeJs PlugIn" width="230">
+</p>
+
+### Getting the different Dependencies and create Modules
+
+To actually start developing, it is necessary to deploy the difference dependencies, which are not available via `Maven Central` and needed by the main module `dis-timeintervaldataanalyzer`, e.g.,
+`gen-dummy`, `gen-misc`, or `gen-server`. To do so, the modules should be deployed using the `Ant` task `04-deploy` in the following order:
+- `gen-dummy`
+- `gen-misc`
+- `gen-sbconfigurator`
+- `gen-server`
+- `gen-server-http-listener`
+- `dis-timeintervaldataanalyzer-jdbc`
+- `dis-timeintervaldataanalyzer`
+
+The same is not necessary for the main UI module `dis-timeintervaldataanalyzer-ui2`. The modules needed are available on `bower` and/or `npm`, thus the `Grunt` scripts are
+capable to receive the dependencies from there.
