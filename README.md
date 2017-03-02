@@ -95,11 +95,11 @@ IntelliJ provides a `Grunt Tool Window` similar to the `Ant` one. Further inform
 After setting everything up, the UI should be similar to something like that (or however you prefer it):
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/intellij-ui-ant.png" alt="UI with Ant Tool Window" width="230">
+  <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/intellij-ui-ant.png" alt="UI with Ant Tool Window" width="500">
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/intellij-ui-plugin-grunt.png" alt="UI with Grunt Tool Window and nodeJs PlugIn" width="230">
+  <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/intellij-ui-plugin-grunt.png" alt="UI with Grunt Tool Window and nodeJs PlugIn" width="500">
 </p>
 
 ### Getting the different Dependencies and create Modules
