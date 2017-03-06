@@ -16,6 +16,7 @@ If you want to develop or modify the TIDA system, the following requirements sho
   - npm (currently used 3.8.9)
   - bower (currently used 1.7.9)
   - grunt-cli (currently used 1.2.0)
+  - Python (currently used 2.7, is a dependency of some node-modules used)
 - IntelliJ IDEA 2016 (optional, but recommended)
   - a fully configured workspace is available [here](https://github.com/pmeisen/tida-workspace)
 - git and/or GitHub Desktop to clone the needed repositories
