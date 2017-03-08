@@ -136,7 +136,7 @@ the solution distributed within this repository ([dist](https://github.com/pmeis
 4. Start the server with `.\bin\start.sh` and check the log
 
    <p align="center">
-     <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/tida-terminal.png" alt="Starting the Server" width="350">
+     <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/tida-terminal.png" alt="Starting the Server" width="450">
    </p>
 
 5. Access the UI via a browser `http://localhost:20666/` or directly the login `http://localhost:20666/login.html`
