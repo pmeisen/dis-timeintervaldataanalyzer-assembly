@@ -128,21 +128,21 @@ the solution distributed within this repository ([dist](https://github.com/pmeis
 1. Download the `tida-server.zip`
 2. Unzip the downloaded file to a folder, e.g., `~\tida`
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/tida-folders.png" alt="Folder Structure" width="230">
-</p>
+   <p align="center">
+     <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/tida-folders.png" alt="Folder Structure" width="230">
+   </p>
 
 3. Now just change to the created directory, e.g., `cd ~\tida`
 4. Start the server with `.\bin\start.sh` and check the log
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/tida-terminal.png" alt="Starting the Server" width="230">
-</p>
+   <p align="center">
+     <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/tida-terminal.png" alt="Starting the Server" width="230">
+   </p>
 
 5. Access the UI via a browser `http://localhost:20666/` or directly the login `http://localhost:20666/login.html`
 6. Login to the server (the default configuration does not use any `AuthenticationManager`, thus any username/password combination can be used)
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/tida-login.png" alt="Server Login" width="300">
-  <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/tida-ui.png" alt="Server Management UI" width="300">
-</p>
+   <p align="center">
+     <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/tida-login.png" alt="Server Login" width="300">
+     <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/tida-ui.png" alt="Server Management UI" width="300">
+   </p>
