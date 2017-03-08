@@ -77,11 +77,11 @@ As mentioned earlier, IntelliJ IDEA is the recommended IDE for the development o
 the `tida-workspace` project. To do so, click on `open` in the IntelliJ start screen (or the `File` menu) and select the `tida-wrokspace` folder (!).
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/intellij-open.png" alt="Folder Structure" width="230">
+  <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/intellij-open.png" alt="IntelliJ IDE (open)" width="230">
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/intellij-project-selection.png" alt="Folder Structure" width="230">
+  <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/intellij-project-selection.png" alt="IntelliJ IDE (project)" width="230">
 </p>
 
 The IntelliJ IDE should open having all the modules of the project already selected. It may be necessary to open up the project view (on the left side). You may also want
@@ -117,3 +117,32 @@ To actually start developing, it is necessary to deploy the difference dependenc
 
 The same is not necessary for the main UI module `dis-timeintervaldataanalyzer-ui2`. The modules needed are available on `bower` and/or `npm`, thus the `Grunt` scripts are
 capable to receive the dependencies from there.
+
+### Starting the Server (Front- and Back-End)
+
+To start an instance of the server for developing purposes (i.e., the front- or back-end), several options are available depending on
+the purpose/development goal. The different ways are described in the appropriate projects, i.e., [front-end](https://github.com/pmeisen/dis-timeintervaldataanalyzer-ui2) or 
+[back-end](https://github.com/pmeisen/dis-timeintervaldataanalyzer). To just start or use the server it is possible to use
+the solution distributed within this repository ([dist](https://github.com/pmeisen/dis-timeintervaldataanalyzer-assembly/tree/master/dist)).
+
+1. Download the `tida-server.zip`
+2. Unzip the downloaded file to a folder, e.g., `~\tida`
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/tida-folders.png" alt="Folder Structure" width="230">
+</p>
+
+3. Now just change to the created directory, e.g., `cd ~\tida`
+4. Start the server with `.\bin\start.sh` and check the log
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/tida-terminal.png" alt="Starting the Server" width="230">
+</p>
+
+5. Access the UI via a browser `http://localhost:20666/` or directly the login `http://localhost:20666/login.html`
+6. Login to the server (the default configuration does not use any `AuthenticationManager`, thus any username/password combination can be used)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/tida-login.png" alt="Server Login" width="300">
+  <img src="https://raw.githubusercontent.com/pmeisen/dis-timeintervaldataanalyzer-assembly/master/docs/tida-ui.png" alt="Server Management UI" width="300">
+</p>
